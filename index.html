@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shavinda Perera Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      background: #020617;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav a {
+      margin: 10px;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #38bdf8;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      margin: 10px 10px 0 0;
+      display: inline-block;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn1 {
+      background: #38bdf8;
+      color: black;
+    }
+
+    .btn2 {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 15px;
+    }
+
+    @media(min-width: 700px) {
+      .grid-2 { grid-template-columns: repeat(2,1fr); }
+      .grid-3 { grid-template-columns: repeat(3,1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <h3>Shavinda</h3>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section>
+  <h1>Hi, I'm G.Shavinda Perera</h1>
+  <p>IT Student | Aspiring Front-End Developer | UI/UX Designer</p>
+
+  <!-- BUTTONS -->
+  <a href="https://github.com/pereranirmana15-bot" target="_blank" class="btn btn1">
+    GitHub
+  </a>
+
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" class="btn btn2">
+    LinkedIn
+  </a>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am an IT undergraduate at RNU University in Latvia. I am passionate about
+      front-end development and UI/UX design. I enjoy creating modern, responsive,
+      and user-friendly websites.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Personal Details</h2>
+  <div class="grid grid-2">
+    <div class="card"><b>Name:</b> G.Shavinda Perera</div>
+    <div class="card"><b>DOB:</b> 2001-08-15</div>
+    <div class="card"><b>Status:</b> Undergraduate</div>
+    <div class="card"><b>Location:</b> Latvia</div>
+    <div class="card"><b>University:</b> RNU</div>
+    <div class="card"><b>Field:</b> IT</div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Frontend</h3>
+      <p>HTML, CSS, JavaScript</p>
+    </div>
+    <div class="card">
+      <h3>UI/UX</h3>
+      <p>Design Basics, Figma</p>
+    </div>
+    <div class="card">
+      <h3>Tools</h3>
+      <p>GitHub, VS Code</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    <p><b>RNU University, Latvia</b></p>
+    <p>Information Technology Undergraduate</p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Personal website using HTML, CSS, JS</p>
+    </div>
+
+    <div class="card">
+      <h3>Landing Page</h3>
+      <p>Responsive UI design project</p>
+    </div>
+
+    <div class="card">
+      <h3>To-Do App</h3>
+      <p>JavaScript task manager</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: yourmail@example.com</p>
+
+    <a href="https://github.com/pereranirmana15-bot" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank">LinkedIn</a>
+  </div>
+</section>
+
+</body>
+</html>

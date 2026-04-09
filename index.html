@@ -1,190 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shavinda Perera Portfolio</title>
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #2b1b17;
+      color: #f5e6d3;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     header {
-      background: #020617;
-      padding: 15px;
+      background: #1a0f0c;
       position: sticky;
       top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #5a3b31;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
     }
 
-    nav a {
-      margin: 10px;
-      color: #38bdf8;
-      text-decoration: none;
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d2a679;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #f0d7bd;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #d2a679;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 70px 0;
     }
 
-    h1, h2 {
-      color: #38bdf8;
+    h1, h2, h3 {
+      color: #d2a679;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      color: #f0d7bd;
+      margin-bottom: 28px;
+      max-width: 650px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 20px;
-      margin: 10px 10px 0 0;
-      display: inline-block;
+      padding: 12px 22px;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
     }
 
-    .btn1 {
-      background: #38bdf8;
-      color: black;
+    .btn-primary {
+      background: #d2a679;
+      color: #2b1b17;
     }
 
-    .btn2 {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
+    .btn-primary:hover {
+      background: #e0b88f;
+    }
+
+    .btn-secondary {
+      border: 1px solid #d2a679;
+      color: #d2a679;
+    }
+
+    .btn-secondary:hover {
+      background: #d2a679;
+      color: #2b1b17;
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 280px;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 4px solid #d2a679;
+      box-shadow: 0 0 25px rgba(210, 166, 121, 0.35);
+    }
+
+    /* Cards and grids */
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 25px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 15px;
+      background: #3b241f;
+      border: 1px solid #5a3b31;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card p {
+      color: #f0d7bd;
     }
 
     .grid {
       display: grid;
-      gap: 15px;
+      gap: 20px;
     }
 
-    @media(min-width: 700px) {
-      .grid-2 { grid-template-columns: repeat(2,1fr); }
-      .grid-3 { grid-template-columns: repeat(3,1fr); }
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .detail-card b {
+      color: #d2a679;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      border-top: 1px solid #5a3b31;
+      color: #d9c1a7;
+      background: #1a0f0c;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-image {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      .hero-text p {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero-image img {
+        width: 240px;
+        height: 300px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <nav>
-    <h3>Shavinda</h3>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Shavinda</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#details">Details</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </div>
-  </nav>
-</header>
+  </header>
 
-<section>
-  <h1>Hi, I'm G.Shavinda Perera</h1>
-  <p>IT Student | Aspiring Front-End Developer | UI/UX Designer</p>
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-text">
+        <h1>Hi, I'm G.Shavinda Perera</h1>
+        <p>IT Student | Aspiring Front-End Developer | UI/UX Designer</p>
 
-  <!-- BUTTONS -->
-  <a href="https://github.com/pereranirmana15-bot" target="_blank" class="btn btn1">
-    GitHub
-  </a>
+        <div class="button-group">
+          <a href="https://github.com/pereranirmana15-bot" target="_blank" class="btn btn-primary">GitHub</a>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+        </div>
+      </div>
 
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" class="btn btn2">
-    LinkedIn
-  </a>
-</section>
-
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I am an IT undergraduate at RNU University in Latvia. I am passionate about
-      front-end development and UI/UX design. I enjoy creating modern, responsive,
-      and user-friendly websites.
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Personal Details</h2>
-  <div class="grid grid-2">
-    <div class="card"><b>Name:</b> G.Shavinda Perera</div>
-    <div class="card"><b>DOB:</b> 2001-08-15</div>
-    <div class="card"><b>Status:</b> Undergraduate</div>
-    <div class="card"><b>Location:</b> Latvia</div>
-    <div class="card"><b>University:</b> RNU</div>
-    <div class="card"><b>Field:</b> IT</div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <h3>Frontend</h3>
-      <p>HTML, CSS, JavaScript</p>
+      <div class="hero-image">
+        <img src="profile.jpg" alt="G.Shavinda Perera">
+      </div>
     </div>
-    <div class="card">
-      <h3>UI/UX</h3>
-      <p>Design Basics, Figma</p>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p>
+          I am an IT undergraduate at RNU University in Latvia. I am passionate about
+          front-end development and UI/UX design. I enjoy creating modern, responsive,
+          and user-friendly websites, and I am continuously improving my technical and design skills.
+        </p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Tools</h3>
-      <p>GitHub, VS Code</p>
+  </section>
+
+  <section id="details">
+    <div class="container">
+      <h2 class="section-title">Personal Details</h2>
+      <div class="grid grid-2">
+        <div class="card detail-card"><b>Name:</b> G.Shavinda Perera</div>
+        <div class="card detail-card"><b>Date of Birth:</b> 2001-08-15</div>
+        <div class="card detail-card"><b>Status:</b> Undergraduate</div>
+        <div class="card detail-card"><b>Location:</b> Latvia</div>
+        <div class="card detail-card"><b>University:</b> RNU University</div>
+        <div class="card detail-card"><b>Field:</b> Information Technology</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Education</h2>
-  <div class="card">
-    <p><b>RNU University, Latvia</b></p>
-    <p>Information Technology Undergraduate</p>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>Personal website using HTML, CSS, JS</p>
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Front-End</h3>
+          <p>HTML, CSS, JavaScript, Responsive Web Design</p>
+        </div>
+        <div class="card">
+          <h3>UI/UX</h3>
+          <p>Design Basics, Layout Design, Wireframing, Figma</p>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <p>GitHub, VS Code, Figma, Browser DevTools</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Landing Page</h3>
-      <p>Responsive UI design project</p>
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <h3>RNU University, Latvia</h3>
+        <p>Information Technology Undergraduate</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>To-Do App</h3>
-      <p>JavaScript task manager</p>
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Portfolio Website</h3>
+          <p>Built using HTML, CSS, and JavaScript to present my profile and skills professionally.</p>
+        </div>
+        <div class="card">
+          <h3>Landing Page</h3>
+          <p>A responsive UI design project focused on structure, spacing, and modern presentation.</p>
+        </div>
+        <div class="card">
+          <h3>To-Do App</h3>
+          <p>A simple JavaScript task manager project built to practice interactivity and DOM handling.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: yourmail@example.com</p>
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>Email: yourmail@example.com</p>
+        <p style="margin-top: 10px;">
+          <a href="https://github.com/pereranirmana15-bot" target="_blank" style="color:#d2a679;">GitHub</a>
+          |
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" style="color:#d2a679;">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <a href="https://github.com/pereranirmana15-bot" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank">LinkedIn</a>
-  </div>
-</section>
+  <footer>
+    <p>© 2026 G.Shavinda Perera. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
